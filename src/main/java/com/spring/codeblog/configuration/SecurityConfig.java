@@ -13,7 +13,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] AUTH_LIST ={
             "/",
-             "/posts",
+             "/posts.html",
              "/post/{id}"
     };
 
