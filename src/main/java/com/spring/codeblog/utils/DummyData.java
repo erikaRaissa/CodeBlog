@@ -15,7 +15,7 @@ import java.util.List;
 public class DummyData {
     @Autowired
     CodeBlogRepository codeBlogRepository;
-    @PostConstruct
+    //@PostConstruct
     public void savePost(){
         List<Post> postList = new ArrayList<>();
         Post p1 = new Post("Erika", "tESTE", LocalDate.now(), "fghjkjfjhgsgbkjsmlhkdgydgwhbsjkxjsk,lmjhuhwdhb");
@@ -26,6 +26,7 @@ public class DummyData {
         for (Post p : postList){
            Post postSaved = codeBlogRepository.save(p);
             System.out.println(postSaved.getId());
+            System.out.println(postSaved.getAutor());
         }
 
     }
