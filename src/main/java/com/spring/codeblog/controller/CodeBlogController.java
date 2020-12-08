@@ -24,16 +24,16 @@ public class CodeBlogController {
 
     @RequestMapping("/")
     public String index(){
-        return "redirect:/posts.html";
+        return "redirect:/posts";
     }
 
-    @RequestMapping(value = "/posts.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public ModelAndView getPosts(){
-        ModelAndView mv = new ModelAndView("posts.html.html");
+        ModelAndView mv = new ModelAndView("posts.html");
 
         List<Post> posts = codeBlogService.findAll();
 
-        mv.addObject("posts.html", posts);
+        mv.addObject("posts", posts);
 
         return mv;
     }
@@ -51,7 +51,7 @@ public class CodeBlogController {
     }
     @RequestMapping(value = "/newpost", method = RequestMethod.GET)
     public String getPostForm(){
-        return "postForm.html.html";
+        return "postForm.html";
     }
 
     @RequestMapping(value = "/newpost", method = RequestMethod.POST)
@@ -63,7 +63,7 @@ public class CodeBlogController {
         post.setData(LocalDate.now());
         codeBlogService.save(post);
 
-        return "redirect:/posts.html";
+        return "redirect:/posts";
     }
 
 
