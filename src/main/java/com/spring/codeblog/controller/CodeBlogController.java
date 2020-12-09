@@ -29,7 +29,7 @@ public class CodeBlogController {
 
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public ModelAndView getPosts(){
-        ModelAndView mv = new ModelAndView("posts.html");
+        ModelAndView mv = new ModelAndView("posts");
 
         List<Post> posts = codeBlogService.findAll();
 
